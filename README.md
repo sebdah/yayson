@@ -1,0 +1,4 @@
+yayson
+======
+
+Yay! Beautiful JSON!
