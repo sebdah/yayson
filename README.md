@@ -33,7 +33,7 @@ or
 Release information
 -------------------
 
-**0.1.1 (2013-04-07)**
+**0.1.0 (2013-04-07)**
 
 - Initial release
 
