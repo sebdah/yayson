@@ -1,7 +1,7 @@
 yayson
 ======
 
-Yay! Beautiful JSON on the command line!
+Yay, beautiful JSON on the command line!
 
 `yayson` will take input on `stdin` and print pretty JSON with color in your terminal. It will come out something like this:
 
@@ -16,10 +16,10 @@ or
 
     curl -s http://www.example.com/my.json | yayson
 
---help output
--------------
+`--help` output
+---------------
 
-    usage: yayson [-h] [-i INDENT] [-s]
+    usage: yayson [-h] [-i INDENT] [-s] [--version]
 
     Yayson produces beautiful JSON
 
@@ -28,6 +28,7 @@ or
       -i INDENT, --indent INDENT
                             Number of spaces to indent with (default: 4)
       -s, --sort            Turn on key sorting
+      --version             Print version information
 
 Release information
 -------------------
