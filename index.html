@@ -33,11 +33,51 @@
       <section id="main_content" class="inner">
         <h1>yayson</h1>
 
-<p>Yay! Beautiful JSON on the command line!</p>
+<p>Yay, beautiful JSON on the command line!</p>
 
 <p><code>yayson</code> will take input on <code>stdin</code> and print pretty JSON with color in your terminal. It will come out something like this:</p>
 
 <p><img src="http://sebdah.github.com/yayson/img/screenshot.png" alt="Example Yayson output"></p>
+
+<h2>Example usage</h2>
+
+<pre><code>cat my.json | yayson
+</code></pre>
+
+<p>or</p>
+
+<pre><code>curl -s http://www.example.com/my.json | yayson
+</code></pre>
+
+<h2>
+<code>--help</code> output</h2>
+
+<pre><code>usage: yayson [-h] [-i INDENT] [-s] [--version]
+
+Yayson produces beautiful JSON
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -i INDENT, --indent INDENT
+                        Number of spaces to indent with (default: 4)
+  -s, --sort            Turn on key sorting
+  --version             Print version information
+</code></pre>
+
+<h2>Release information</h2>
+
+<p><strong>0.1.1 (2013-04-07)</strong></p>
+
+<ul>
+<li>Initial release</li>
+</ul><h2>Releasing to PyPI</h2>
+
+<pre><code>make release
+</code></pre>
+
+<h2>Author</h2>
+
+<p>This project is maintained by <a href="http://www.sebastiandahlgren.se">Sebastian Dahlgren</a> (<a href="https://github.com/sebdah">GitHub</a> | <a href="https://twitter.com/sebdah">Twitter</a> | <a href="www.linkedin.com/in/sebastiandahlgren">LinkedIn</a>)</p>
       </section>
     </div>
 
@@ -49,7 +89,17 @@
       </footer>
     </div>
 
-    
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-37516009-4");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
 
   </body>
 </html>
