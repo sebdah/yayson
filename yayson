@@ -22,7 +22,7 @@ import json
 import colorama
 import argparse
 
-VERSION = '0.1.0'
+VERSION = '0.2.0'
 
 
 def main():
@@ -31,8 +31,12 @@ def main():
         description='Yayson produces beautiful JSON')
     parser.add_argument('-i', '--indent',
         type=int,
-        default=4,
-        help='Number of spaces to indent with (default: 4)')
+        default=2,
+        help='Number of spaces to indent with (default: 2)')
+    parser.add_argument('-c', '--compact',
+        action='store_true',
+        help=('Print JSON in compact mode, i.e. without '
+            'spaces between keys and values'))
     parser.add_argument('-s', '--sort',
         action='store_true',
         help='Turn on key sorting')
@@ -60,10 +64,17 @@ def main():
         sys.stderr.write('Invalid JSON\n')
         sys.exit(1)
 
+    # Set compact / extensive mode
+    if args.compact:
+        separators = (',', ':')
+    else:
+        separators = (', ', ': ')
+
     dump = json.dumps(
         doc,
         indent=args.indent,
-        sort_keys=args.sort)
+        sort_keys=args.sort,
+        separators=separators)
 
     # Print the JSON
     for line in dump.split('\n'):
@@ -86,7 +97,12 @@ def main():
                     colorama.Fore.YELLOW + ','
                 )
 
-            print (colorama.Fore.YELLOW + key + ': ' + value)
+            if args.compact:
+                separator = ':'
+            else:
+                separator = ': '
+
+            print (colorama.Fore.YELLOW + key + separator + value)
         except ValueError:
             print(colorama.Fore.YELLOW + line)
 
