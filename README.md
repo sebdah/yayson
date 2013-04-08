@@ -35,6 +35,11 @@ or
 Release information
 -------------------
 
+**0.2.0 (2013-04-08)**
+
+- [Set default indenting to 2 spaces (#2)](https://github.com/sebdah/yayson/issues/2)
+- [Add compact mode (#1)](https://github.com/sebdah/yayson/issues/1)
+
 **0.1.0 (2013-04-07)**
 
 - Initial release
