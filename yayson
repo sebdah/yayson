@@ -31,8 +31,8 @@ def main():
         description='Yayson produces beautiful JSON')
     parser.add_argument('-i', '--indent',
         type=int,
-        default=4,
-        help='Number of spaces to indent with (default: 4)')
+        default=2,
+        help='Number of spaces to indent with (default: 2)')
     parser.add_argument('-s', '--sort',
         action='store_true',
         help='Turn on key sorting')
