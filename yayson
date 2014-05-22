@@ -46,7 +46,7 @@ def main():
     args = parser.parse_args()
 
     if args.version:
-        print 'Yayson {0}'.format(VERSION)
+        print('Yayson {0}'.format(VERSION))
         sys.exit(0)
 
     # Initialize colorama
