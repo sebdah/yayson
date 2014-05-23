@@ -35,6 +35,10 @@ or
 Release information
 -------------------
 
+**0.3.0 (2013-05-23)**
+
+- [Small fix for Python 3 (#5)](https://github.com/sebdah/yayson/issues/5). Thanks [@Fiedzia](https://github.com/Fiedzia) for the PR.
+
 **0.2.0 (2013-04-08)**
 
 - [Set default indenting to 2 spaces (#2)](https://github.com/sebdah/yayson/issues/2)
