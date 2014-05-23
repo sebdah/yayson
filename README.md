@@ -19,19 +19,26 @@ or
 `--help` output
 ---------------
 
-    usage: yayson [-h] [-i INDENT] [-s] [--version]
+    usage: yayson [-h] [-i INDENT] [-c] [-s] [--version]
 
     Yayson produces beautiful JSON
 
     optional arguments:
       -h, --help            show this help message and exit
       -i INDENT, --indent INDENT
-                            Number of spaces to indent with (default: 4)
+                            Number of spaces to indent with (default: 2)
+      -c, --compact         Print JSON in compact mode, i.e. without spaces
+                            between keys and values
       -s, --sort            Turn on key sorting
       --version             Print version information
 
 Release information
 -------------------
+
+**0.2.0 (2013-04-08)**
+
+- [Set default indenting to 2 spaces (#2)](https://github.com/sebdah/yayson/issues/2)
+- [Add compact mode (#1)](https://github.com/sebdah/yayson/issues/1)
 
 **0.1.0 (2013-04-07)**
 
