@@ -29,18 +29,23 @@ def main():
     """ Main function """
     parser = argparse.ArgumentParser(
         description='Yayson produces beautiful JSON')
-    parser.add_argument('-i', '--indent',
+    parser.add_argument(
+        '-i', '--indent',
         type=int,
         default=2,
         help='Number of spaces to indent with (default: 2)')
-    parser.add_argument('-c', '--compact',
+    parser.add_argument(
+        '-c', '--compact',
         action='store_true',
-        help=('Print JSON in compact mode, i.e. without '
+        help=(
+            'Print JSON in compact mode, i.e. without '
             'spaces between keys and values'))
-    parser.add_argument('-s', '--sort',
+    parser.add_argument(
+        '-s', '--sort',
         action='store_true',
         help='Turn on key sorting')
-    parser.add_argument('--version',
+    parser.add_argument(
+        '--version',
         action='store_true',
         help='Print version information')
     args = parser.parse_args()
