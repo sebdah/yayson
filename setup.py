@@ -2,8 +2,9 @@
 from setuptools import setup
 
 
-setup(name='yayson',
-    version='0.2.0',
+setup(
+    name='yayson',
+    version='0.3.0',
     license='Apache License, Version 2.0',
     description='Get colorized and indented JSON in the terminal',
     author='Sebastian Dahlgren',
