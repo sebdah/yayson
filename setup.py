@@ -1,10 +1,11 @@
 """ Setup script for PyPI """
 from setuptools import setup
 
+from yayson import VERSION
 
 setup(
     name='yayson',
-    version='0.3.0',
+    version=VERSION,
     license='Apache License, Version 2.0',
     description='Get colorized and indented JSON in the terminal',
     author='Sebastian Dahlgren',
@@ -12,7 +13,7 @@ setup(
     url='http://sebdah.github.com/yayson/',
     keywords="color colorized json indented beautiful pretty",
     platforms=['Any'],
-    scripts=['yayson'],
+    scripts=['yayson.py'],
     include_package_data=True,
     zip_safe=False,
     install_requires=[
