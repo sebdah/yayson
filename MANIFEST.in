@@ -1,2 +1,2 @@
-include yayson
+include yayson.py
 include README

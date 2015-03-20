@@ -13,6 +13,7 @@ setup(
     url='http://sebdah.github.com/yayson/',
     keywords="color colorized json indented beautiful pretty",
     platforms=['Any'],
+    package_dir={'yayson': '.'},
     scripts=['yayson.py'],
     include_package_data=True,
     zip_safe=False,
