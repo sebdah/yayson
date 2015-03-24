@@ -22,7 +22,61 @@ import json
 import colorama
 import argparse
 
-VERSION = '0.3.0'
+VERSION = '0.3.1'
+
+
+def yayson(doc, compact=False, indent=2, sort=False):
+
+    # Parse the JSON
+    try:
+        doc = json.loads(doc)
+    except ValueError:
+        sys.stderr.write('Invalid JSON\n')
+        sys.exit(1)
+
+    # Set compact / extensive mode
+    if compact:
+        separators = (',', ':')
+    else:
+        separators = (', ', ': ')
+
+    dump = json.dumps(
+        doc,
+        indent=indent,
+        sort_keys=sort,
+        separators=separators)
+
+    # Print the JSON
+    for line in dump.split('\n'):
+        try:
+            key, value = line.split(':', 1)
+            value = value.strip()
+
+            # Handle values
+            if value[0] == '{':
+                value = colorama.Fore.YELLOW + value
+            if value[0] == '[':
+                value = colorama.Fore.YELLOW + value
+            elif value[0] == '"':
+                value = colorama.Fore.MAGENTA + value
+            else:
+                value = colorama.Fore.CYAN + value
+            if value[len(value)-1] == ',':
+                value = (
+                    colorama.Fore.MAGENTA + value[:len(value)-1] +
+                    colorama.Fore.YELLOW + ','
+                )
+
+            if compact:
+                separator = ':'
+            else:
+                separator = ': '
+
+            print (colorama.Fore.YELLOW + key + separator + value)
+        except ValueError:
+            print(colorama.Fore.YELLOW + line)
+
+    print(colorama.Fore.RESET)
 
 
 def main():
@@ -62,58 +116,9 @@ def main():
     for line in sys.stdin.readlines():
         doc += line
 
-    # Parse the JSON
-    try:
-        doc = json.loads(doc)
-    except ValueError:
-        sys.stderr.write('Invalid JSON\n')
-        sys.exit(1)
-
-    # Set compact / extensive mode
-    if args.compact:
-        separators = (',', ':')
-    else:
-        separators = (', ', ': ')
-
-    dump = json.dumps(
-        doc,
-        indent=args.indent,
-        sort_keys=args.sort,
-        separators=separators)
-
-    # Print the JSON
-    for line in dump.split('\n'):
-        try:
-            key, value = line.split(':', 1)
-            value = value.strip()
-
-            # Handle values
-            if value[0] == '{':
-                value = colorama.Fore.YELLOW + value
-            if value[0] == '[':
-                value = colorama.Fore.YELLOW + value
-            elif value[0] == '"':
-                value = colorama.Fore.MAGENTA + value
-            else:
-                value = colorama.Fore.CYAN + value
-            if value[len(value)-1] == ',':
-                value = (
-                    colorama.Fore.MAGENTA + value[:len(value)-1] +
-                    colorama.Fore.YELLOW + ','
-                )
-
-            if args.compact:
-                separator = ':'
-            else:
-                separator = ': '
-
-            print (colorama.Fore.YELLOW + key + separator + value)
-        except ValueError:
-            print(colorama.Fore.YELLOW + line)
+    yayson(doc, compact=args.compact, indent=args.indent, sort=args.sort)
 
 
 if __name__ == '__main__':
     main()
     sys.exit(0)
-
-sys.exit(1)
