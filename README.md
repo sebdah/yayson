@@ -10,16 +10,16 @@ Yay, beautiful JSON on the command line!
 Example usage
 -------------
 
-    cat my.json | yayson
+    cat my.json | yayson.py
 
 or
 
-    curl -s http://www.example.com/my.json | yayson
+    curl -s http://www.example.com/my.json | yayson.py
 
 `--help` output
 ---------------
 
-    usage: yayson [-h] [-i INDENT] [-c] [-s] [--version]
+    usage: yayson.py [-h] [-i INDENT] [-c] [-s] [--version]
 
     Yayson produces beautiful JSON
 
@@ -34,6 +34,10 @@ or
 
 Release information
 -------------------
+
+**0.3.1 (2015-03-23)**
+
+- [Library support (#6)](https://github.com/sebdah/yayson/issues/6). Thanks [@Macropin](https://github.com/macropin) for the PR.
 
 **0.3.0 (2013-05-23)**
 
